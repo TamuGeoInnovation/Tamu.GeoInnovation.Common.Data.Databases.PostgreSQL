@@ -1,0 +1,5 @@
+C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\Utils\Databases.PostgreSQL\build\v1.1\bin\AnyCPU\debug\USC.GISResearchLab.Common.Utils.Databases.Npgsql.dll
+C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\Utils\Databases.PostgreSQL\build\v1.1\bin\AnyCPU\debug\USC.GISResearchLab.Common.Utils.Databases.Npgsql.pdb
+C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\Utils\Databases.PostgreSQL\src\obj\Debug\Common.Utils.Databases.Npgsql.csprojResolveAssemblyReference.cache
+C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\Utils\Databases.PostgreSQL\src\obj\Debug\USC.GISResearchLab.Common.Utils.Databases.Npgsql.dll
+C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\Utils\Databases.PostgreSQL\src\obj\Debug\USC.GISResearchLab.Common.Utils.Databases.Npgsql.pdb
