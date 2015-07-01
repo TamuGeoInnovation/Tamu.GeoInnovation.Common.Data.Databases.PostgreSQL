@@ -84,12 +84,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Security">
-      <HintPath>..\..\..\..\..\..\..\..\DevDependencies\Npgsql2.0.13.91-bin-ms.net4.0\Mono.Security.dll</HintPath>
+      <HintPath>..\..\libs\Mono.Security.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Npgsql, Version=2.0.13.91, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\DevDependencies\Npgsql2.0.13.91-bin-ms.net4.0\Npgsql.dll</HintPath>
+      <HintPath>..\..\libs\Npgsql.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
