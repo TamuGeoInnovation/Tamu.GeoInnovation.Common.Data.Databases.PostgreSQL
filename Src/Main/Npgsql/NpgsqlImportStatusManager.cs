@@ -170,7 +170,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
                 sb.Append(");");
 
 
-                SchemaManager.AddTableToDatabase(tableName, sb.ToString());
+                SchemaManager.AddTableToDatabase(tableName, sb.ToString(), false);
             }
             catch (Exception e)
             {
@@ -228,7 +228,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
                 sb.Append("PRIMARY KEY  (id)");
                 sb.Append(");");
 
-                SchemaManager.AddTableToDatabase(tableName, sb.ToString());
+                SchemaManager.AddTableToDatabase(tableName, sb.ToString(), false);
             }
             catch (Exception e)
             {
