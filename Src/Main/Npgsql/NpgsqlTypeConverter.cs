@@ -26,6 +26,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
         public static string TYPENAME_UserDefined = "USER-DEFINED";
         public static string TYPENAME_Character_Varying = "character varying";
         public static string TYPENAME_Int = "Int";
+        public static string TYPENAME_Integer = "Integer";
         public static string TYPENAME_Int16 = "Int16";
         public static string TYPENAME_Int24 = "Int24";
         public static string TYPENAME_Int32 = "Int32";
@@ -41,6 +42,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
         public static string TYPENAME_Text = "Text";
         public static string TYPENAME_Time = "Time";
         public static string TYPENAME_Timestamp = "Timestamp";
+        public static string TYPENAME_TimestampWithoutTimeZone = "timestamp without time zone";
         public static string TYPENAME_TinyBlob = "TinyBlob";
         public static string TYPENAME_TinyText = "TinyText";
         public static string TYPENAME_UByte = "UByte";
@@ -250,6 +252,10 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
             {
                 ret = NpgsqlDbType.Integer;
             }
+            else if (String.Compare(type, TYPENAME_Integer, true) == 0)
+            {
+                ret = NpgsqlDbType.Integer;
+            }
             else if (String.Compare(type, TYPENAME_Int16, true) == 0)
             {
                 ret = NpgsqlDbType.Smallint;
@@ -307,6 +313,10 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
                 ret = NpgsqlDbType.Time;
             }
             else if (String.Compare(type, TYPENAME_Timestamp, true) == 0)
+            {
+                ret = NpgsqlDbType.Timestamp;
+            }
+            else if (String.Compare(type, TYPENAME_TimestampWithoutTimeZone, true) == 0)
             {
                 ret = NpgsqlDbType.Timestamp;
             }
