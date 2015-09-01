@@ -770,7 +770,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
                     ret = TYPENAME_VarChar;
                     break;
                 case DatabaseSuperDataType.Counter:
-                    ret = TYPENAME_Int32;
+                    ret = TYPENAME_Integer;
                     break;
                 case DatabaseSuperDataType.Currency:
                     ret = TYPENAME_Decimal;
@@ -836,7 +836,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
                     ret = TYPENAME_Int24;
                     break;
                 case DatabaseSuperDataType.Int32:
-                    ret = TYPENAME_Int32;
+                    ret = TYPENAME_Integer;
                     break;
                 case DatabaseSuperDataType.Int64:
                     ret = TYPENAME_Int64;
@@ -845,22 +845,22 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
                     ret = TYPENAME_Text;
                     break;
                 case DatabaseSuperDataType.Long:
-                    ret = TYPENAME_Int32;
+                    ret = TYPENAME_Integer;
                     break;
                 case DatabaseSuperDataType.LongBinary:
                     ret = TYPENAME_Blob;
                     break;
                 case DatabaseSuperDataType.LongText:
-                    ret = TYPENAME_LongText;
+                    ret = TYPENAME_Text;
                     break;
                 case DatabaseSuperDataType.LongVarBinary:
                     ret = TYPENAME_LongBlob;
                     break;
                 case DatabaseSuperDataType.LongVarChar:
-                    ret = TYPENAME_LongText;
+                    ret = TYPENAME_Text;
                     break;
                 case DatabaseSuperDataType.LongVarWChar:
-                    ret = TYPENAME_LongText;
+                    ret = TYPENAME_Text;
                     break;
                 case DatabaseSuperDataType.MediumBlob:
                     ret = TYPENAME_MediumBlob;

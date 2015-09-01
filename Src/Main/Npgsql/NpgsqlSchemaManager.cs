@@ -12,6 +12,7 @@ using USC.GISResearchLab.Common.Databases.SqlServer;
 using USC.GISResearchLab.Common.Databases.TypeConverters;
 using USC.GISResearchLab.Common.Databases.TypeConverters.DataProviderTypeConverters;
 using USC.GISResearchLab.Common.Utils.Databases.TableDefinitions;
+using System.Text;
 
 namespace USC.GISResearchLab.Common.Databases.Npgsql
 {
@@ -78,7 +79,59 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
 
         public override void AddColumnToTable(string tableName, string columnName, DatabaseSuperDataType dataType, bool nullable, int maxLength, int precision)
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+
+            try
+            {
+                NpgsqlSchemaManager schemaManager = new NpgsqlSchemaManager();
+                string outputTableName = tableName.Trim();
+                outputTableName = schemaManager.AsDbTableName(outputTableName, true, false);
+
+
+                NpgsqlTypeConverter typeConverter = new NpgsqlTypeConverter();
+                
+                sb.Append(" ALTER TABLE " + outputTableName);
+                sb.Append(" ADD ");
+                sb.Append(" " + schemaManager.AsDbColumnName(columnName));
+                sb.Append(" " + typeConverter.GetTypeAsString(dataType));
+                if (maxLength > 0)
+                {
+                    sb.Append(" ( ");
+
+                    if (maxLength == Int32.MaxValue)
+                    {
+                        sb.Append(" 10485760 ");
+                    }
+                    else
+                    {
+                        sb.Append(" " + maxLength);
+                    }
+
+                    if (precision > 0)
+                    {
+                        sb.Append(", " + precision);
+                    }
+
+                    sb.Append(" ) ");
+                }
+
+                if (nullable)
+                {
+                    sb.Append(" NULL ");
+                }
+                else
+                {
+                    sb.Append(" NOT NULL ");
+                }
+
+                QueryManager.ExecuteNonQuery(CommandType.Text, sb.ToString(), true);
+            }
+            catch (Exception ex)
+            {
+                string msg = "Error AddColumnToTable: " + ex.Message;
+                throw new Exception(msg, ex);
+
+            }
         }
 
         public override string BuildCreateTableStatement(TableDefinition tableDefinition)
