@@ -647,5 +647,52 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
         {
            AddGeogIndexToDatabase(tableName);
         }
+
+        public override string AsDbColumnName(string s, bool wrapWithBrackets, bool wrapWithSapce, bool allowSpaces)
+        {
+            string ret = "";
+            if (!String.IsNullOrEmpty(s))
+            {
+                ret = s.Trim();
+
+                if (allowSpaces)
+                {
+                    ret = RemoveColumnNameIllegalsChars(ret, new char[] { '_', '-', ' ' });
+                }
+                else
+                {
+                    ret = RemoveColumnNameIllegalsChars(ret);
+                }
+
+
+
+                if (!ret.StartsWith("\""))
+                {
+                    if (wrapWithSapce)
+                    {
+                        ret = "\" " + ret;
+                    }
+                    else
+                    {
+                        ret = "\"" + ret;
+                    }
+                }
+
+                if (!ret.EndsWith("\""))
+                {
+                    if (wrapWithSapce)
+                    {
+                        ret += " \"";
+                    }
+                    else
+                    {
+                        ret += "\"";
+                    }
+                }
+
+            }
+
+            return ret;
+        }
     }
 }
