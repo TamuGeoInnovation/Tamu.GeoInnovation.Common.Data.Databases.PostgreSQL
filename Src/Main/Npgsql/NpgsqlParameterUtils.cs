@@ -1,11 +1,11 @@
+using Npgsql;
+using NpgsqlTypes;
 using System;
 using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.IO;
 using System.Reflection;
-using Npgsql;
-using NpgsqlTypes;
 using USC.GISResearchLab.Common.Core.Databases;
 using USC.GISResearchLab.Common.Databases.TypeConverters;
 using USC.GISResearchLab.Common.Databases.TypeConverters.DatabaseTypeConverters;
@@ -46,7 +46,7 @@ namespace USC.GISResearchLab.Common.Utils.Databases
             AbstractDatabaseDataProviderTypeConverterManager typeConverterSqlServer = (AbstractDatabaseDataProviderTypeConverterManager)DatabaseTypeConverterManagerFactory.GetDatabaseTypeConverterManager(pathToDatabaseDlls, DatabaseType.SqlServer);
             AbstractDatabaseDataProviderTypeConverterManager typeConverterNpgsql = (AbstractDatabaseDataProviderTypeConverterManager)DatabaseTypeConverterManagerFactory.GetDatabaseTypeConverterManager(pathToDatabaseDlls, DatabaseType.Npgsql);
             DatabaseSuperDataType superType = typeConverterSqlServer.ToSuperType(type);
-            NpgsqlDbType NpgsqlType = (NpgsqlDbType) typeConverterNpgsql.FromDatabaseSuperDataType(superType);
+            NpgsqlDbType NpgsqlType = (NpgsqlDbType)typeConverterNpgsql.FromDatabaseSuperDataType(superType);
 
             NpgsqlParameter ret = new NpgsqlParameter(name, NpgsqlType);
             if (value == null || value == DBNull.Value)
@@ -62,7 +62,7 @@ namespace USC.GISResearchLab.Common.Utils.Databases
             return ret;
         }
 
-        
+
         public static SqlParameter BuildSqlUdtParameter(string name, string dbTypeName, object value)
         {
             SqlParameter ret = new SqlParameter(name, SqlDbType.Udt) { UdtTypeName = dbTypeName };

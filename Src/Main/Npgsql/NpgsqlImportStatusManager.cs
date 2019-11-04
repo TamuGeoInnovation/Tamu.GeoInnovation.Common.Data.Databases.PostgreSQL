@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using Npgsql;
+using System.Text;
 using USC.GISResearchLab.Common.Core.Databases;
 using USC.GISResearchLab.Common.Databases.ImportStatusManagers;
 using USC.GISResearchLab.Common.Databases.QueryManagers;
@@ -10,13 +11,12 @@ using USC.GISResearchLab.Common.Databases.SchemaManagers;
 using USC.GISResearchLab.Common.Databases.StoredProcedures;
 using USC.GISResearchLab.Common.Diagnostics.TraceEvents;
 using USC.GISResearchLab.Common.Utils.Databases;
-using System.Text;
 
 namespace USC.GISResearchLab.Common.Databases.Npgsql
 {
     public class NpgsqlImportStatusManager : AbstractImportStatusManager
     {
-       
+
 
         //#region Properties
 
@@ -91,7 +91,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
         {
             SchemaManager = SchemaManagerFactory.GetSchemaManager(pathToDatabaseDlls, providerType, connectionString);
         }
-        
+
 
         public override void InitializeConnections()
         {
@@ -156,7 +156,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
                     SchemaManager.RemoveTableFromDatabase(tableName);
                 }
 
-               // string sql = "\\c " + SchemaManager.QueryManager.Connection.Database + "; ";
+                // string sql = "\\c " + SchemaManager.QueryManager.Connection.Database + "; ";
                 //sql += "IF NOT EXISTS (SELECT * FROM sysobjects WHERE type = 'U' AND name = '" + tableName + "')";
                 StringBuilder sb = new StringBuilder();
                 sb.Append("CREATE TABLE " + tableName + " (");
@@ -464,7 +464,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
             return ret;
         }
 
-        
+
 
         public override bool UpdateStatusFile(string tableName, string state, string county, string file, Statuses status, string message)
         {
@@ -498,7 +498,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
 
                 if (id <= 0 || status == Statuses.start)
                 {
-                    InsertStatusFile(tableName, state, county,  file);
+                    InsertStatusFile(tableName, state, county, file);
                 }
                 else
                 {
@@ -538,7 +538,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
             return ret;
         }
 
-        
+
 
         public override bool UpdateStatusState(string tableName, string state, Statuses status, string message)
         {
@@ -604,7 +604,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
             return ret;
         }
 
-       
+
 
         public override bool UpdateStatusCounty(string tableName, string state, string county, Statuses status, string message)
         {
@@ -633,7 +633,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
                 SchemaManager.QueryManager.AddParameters(cmd.Parameters);
                 int id = SchemaManager.QueryManager.ExecuteScalarInt(CommandType.Text, cmd.CommandText, true);
 
-                
+
 
                 if (id <= 0 || status == Statuses.start)
                 {

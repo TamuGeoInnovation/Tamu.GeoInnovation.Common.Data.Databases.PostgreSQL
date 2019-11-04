@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Npgsql;
+using NpgsqlTypes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using Npgsql;
-using NpgsqlTypes;
+using System.Text;
 using USC.GISResearchLab.Common.Core.Databases;
 using USC.GISResearchLab.Common.Core.Utils.Arrays;
 using USC.GISResearchLab.Common.Databases.QueryManagers;
@@ -12,7 +13,6 @@ using USC.GISResearchLab.Common.Databases.SqlServer;
 using USC.GISResearchLab.Common.Databases.TypeConverters;
 using USC.GISResearchLab.Common.Databases.TypeConverters.DataProviderTypeConverters;
 using USC.GISResearchLab.Common.Utils.Databases.TableDefinitions;
-using System.Text;
 
 namespace USC.GISResearchLab.Common.Databases.Npgsql
 {
@@ -89,7 +89,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
 
 
                 NpgsqlTypeConverter typeConverter = new NpgsqlTypeConverter();
-                
+
                 sb.Append(" ALTER TABLE " + outputTableName);
                 sb.Append(" ADD ");
                 sb.Append(" " + schemaManager.AsDbColumnName(columnName));
@@ -420,7 +420,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
             try
             {
 
-                NpgsqlCommand cmd = new NpgsqlCommand("show create table " + tableName, (NpgsqlConnection) Connection);
+                NpgsqlCommand cmd = new NpgsqlCommand("show create table " + tableName, (NpgsqlConnection)Connection);
                 cmd.CommandTimeout = 0;
                 NpgsqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -561,7 +561,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
         {
             DataTable ret = null;
             string sql = "";
-          //  sql += "SHOW TABLES FROM " + databaseName;
+            //  sql += "SHOW TABLES FROM " + databaseName;
             sql += "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' and table_type = 'BASE TABLE';";
             NpgsqlCommand cmd = new NpgsqlCommand(sql);
             cmd.CommandTimeout = 0;
@@ -620,7 +620,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
         }
 
         public override void RemoveTableFromDatabase(string tableName)
-        {   
+        {
             try
             {
                 string sql = "drop table if exists " + tableName + ";";
@@ -698,7 +698,7 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
 
         public override void AddGeogIndexToDatabase(string tableName, bool shouldOpenCloseConnection)
         {
-           AddGeogIndexToDatabase(tableName);
+            AddGeogIndexToDatabase(tableName);
         }
 
         public override string AsDbColumnName(string s, bool wrapWithBrackets, bool wrapWithSapce, bool allowSpaces)

@@ -36,9 +36,9 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
             switch (dataProviderType)
             {
                 case DataProviderType.Npgsql:
-                    ret = "Server=" + Location + ";Port=5432;Database=" + DefaultDatabase + ";User ID=" + UserName + ";Password=" + Password + ";"+"Pooling=false;";
+                    ret = "Server=" + Location + ";Port=5432;Database=" + DefaultDatabase + ";User ID=" + UserName + ";Password=" + Password + ";" + "Pooling=false;";
                     //ret = "User ID=" + UserName + ";Password=" + Password + ";Server=" + Location + ";Port=5432;Database=" + DefaultDatabase + ";";
-                        //";Pooling=true;Min Pool Size=0;Max Pool Size=100;Connection Lifetime=0;";
+                    //";Pooling=true;Min Pool Size=0;Max Pool Size=100;Connection Lifetime=0;";
                     //ret = "Server=" + Location + ";Uid=" + UserName + ";Pwd=" + Password + ";Database=" + DefaultDatabase + ";";
                     break;
                 case DataProviderType.Odbc:

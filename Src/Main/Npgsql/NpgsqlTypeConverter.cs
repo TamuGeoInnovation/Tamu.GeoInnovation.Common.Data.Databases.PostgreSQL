@@ -1,5 +1,5 @@
-using System;
 using NpgsqlTypes;
+using System;
 using USC.GISResearchLab.Common.Core.Databases;
 using USC.GISResearchLab.Common.Databases.TypeConverters;
 
@@ -86,9 +86,9 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
                 case NpgsqlDbType.Bit:
                     ret = DatabaseSuperDataType.Bit;
                     break;
-               /* case NpgsqlDbType.Bytea:
-                    ret = DatabaseSuperDataType.Blob;
-                    break;*/
+                /* case NpgsqlDbType.Bytea:
+                     ret = DatabaseSuperDataType.Blob;
+                     break;*/
                 case NpgsqlDbType.Date:
                     ret = DatabaseSuperDataType.Date;
                     break;
@@ -110,15 +110,15 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
                 case NpgsqlDbType.Integer:
                     ret = DatabaseSuperDataType.Int24;
                     break;
-             /*   case NpgsqlDbType.Integer:
-                    ret = DatabaseSuperDataType.Int32;
-                    break;*/
+                /*   case NpgsqlDbType.Integer:
+                       ret = DatabaseSuperDataType.Int32;
+                       break;*/
                 case NpgsqlDbType.Bigint:
                     ret = DatabaseSuperDataType.Int64;
                     break;
-              /*  case NpgsqlDbType.Bytea:
-                    ret = DatabaseSuperDataType.MediumBlob;
-                    break;*/
+                /*  case NpgsqlDbType.Bytea:
+                      ret = DatabaseSuperDataType.MediumBlob;
+                      break;*/
                 //case NpgsqlDbType.Newdate:
                 //    ret = DatabaseSuperDataType.Newdate;
                 //    break;
@@ -131,45 +131,45 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
                 case NpgsqlDbType.Text:
                     ret = DatabaseSuperDataType.String;
                     break;
-             /*   case NpgsqlDbType.Text:
-                    ret = DatabaseSuperDataType.Text;
-                    break;*/
+                /*   case NpgsqlDbType.Text:
+                       ret = DatabaseSuperDataType.Text;
+                       break;*/
                 case NpgsqlDbType.Time:
                     ret = DatabaseSuperDataType.Time;
                     break;
-               /* case NpgsqlDbType.Timestamp:
-                    ret = DatabaseSuperDataType.Timestamp;
-                    break;*/
-             /*   case NpgsqlDbType.Bytea:
-                    ret = DatabaseSuperDataType.TinyBlob;
-                    break;*/
+                /* case NpgsqlDbType.Timestamp:
+                     ret = DatabaseSuperDataType.Timestamp;
+                     break;*/
+                /*   case NpgsqlDbType.Bytea:
+                       ret = DatabaseSuperDataType.TinyBlob;
+                       break;*/
                 case NpgsqlDbType.Varchar:
                     ret = DatabaseSuperDataType.TinyText;
                     break;
                 //case NpgsqlDbType.UByte:
                 //    ret = DatabaseSuperDataType.UByte;
                 //    break;
-              /*  case NpgsqlDbType.Integer:
-                    ret = DatabaseSuperDataType.UInt16;
-                    break;*/
-              /*  case NpgsqlDbType.Bigint:
-                    ret = DatabaseSuperDataType.UInt24;
-                    break;*/
-               /* case NpgsqlDbType.Bigint:
-                    ret = DatabaseSuperDataType.UInt32;
-                    break;*/
-               /* case NpgsqlDbType.Numeric:
-                    ret = DatabaseSuperDataType.UInt64;
-                    break;*/
-               /* case NpgsqlDbType.Bytea:
-                    ret = DatabaseSuperDataType.VarBinary;
-                    break;*/
+                /*  case NpgsqlDbType.Integer:
+                      ret = DatabaseSuperDataType.UInt16;
+                      break;*/
+                /*  case NpgsqlDbType.Bigint:
+                      ret = DatabaseSuperDataType.UInt24;
+                      break;*/
+                /* case NpgsqlDbType.Bigint:
+                     ret = DatabaseSuperDataType.UInt32;
+                     break;*/
+                /* case NpgsqlDbType.Numeric:
+                     ret = DatabaseSuperDataType.UInt64;
+                     break;*/
+                /* case NpgsqlDbType.Bytea:
+                     ret = DatabaseSuperDataType.VarBinary;
+                     break;*/
                 /*case NpgsqlDbType.Varchar:
                     ret = DatabaseSuperDataType.VarChar;
                     break;*/
-              /*  case NpgsqlDbType.Text:
-                    ret = DatabaseSuperDataType.VarString;
-                    break;*/
+                /*  case NpgsqlDbType.Text:
+                      ret = DatabaseSuperDataType.VarString;
+                      break;*/
                 //case NpgsqlDbType.Year:
                 //    ret = DatabaseSuperDataType.Year;
                 //    break;
@@ -644,9 +644,9 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
                 case NpgsqlDbType.Bit:
                     ret = typeof(Boolean);
                     break;
-              /*  case NpgsqlDbType.Bytea:
-                    ret = typeof(Byte[]);
-                    break;*/
+                /*  case NpgsqlDbType.Bytea:
+                      ret = typeof(Byte[]);
+                      break;*/
                 case NpgsqlDbType.Date:
                     ret = typeof(DateTime);
                     break;
@@ -668,9 +668,9 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
                 case NpgsqlDbType.Integer:
                     ret = typeof(Int32);
                     break;
-              /*  case NpgsqlDbType.Integer:
-                    ret = typeof(Int32);
-                    break;*/
+                /*  case NpgsqlDbType.Integer:
+                      ret = typeof(Int32);
+                      break;*/
                 case NpgsqlDbType.Bigint:
                     ret = typeof(Int64);
                     break;
@@ -689,42 +689,42 @@ namespace USC.GISResearchLab.Common.Databases.Npgsql
                 case NpgsqlDbType.Text:
                     ret = typeof(String);
                     break;
-               /* case NpgsqlDbType.Text:
-                    ret = typeof(String);
-                    break;*/
-               /* case NpgsqlDbType.Time:
-                    ret = typeof(DateTime);
-                    break;*/
-               /* case NpgsqlDbType.Timestamp:
-                    ret = typeof(DateTime);
-                    break;*/
-               /* case NpgsqlDbType.Bytea:
-                    ret = typeof(Byte[]);
-                    break;*/
+                /* case NpgsqlDbType.Text:
+                     ret = typeof(String);
+                     break;*/
+                /* case NpgsqlDbType.Time:
+                     ret = typeof(DateTime);
+                     break;*/
+                /* case NpgsqlDbType.Timestamp:
+                     ret = typeof(DateTime);
+                     break;*/
+                /* case NpgsqlDbType.Bytea:
+                     ret = typeof(Byte[]);
+                     break;*/
                 case NpgsqlDbType.Varchar:
                     ret = typeof(String);
                     break;
                 //case NpgsqlDbType.UByte:
                 //    ret = typeof(Byte);
                 //    break;
-               /* case NpgsqlDbType.Integer:
-                    ret = typeof(UInt16);
-                    break;*/
-              /*  case NpgsqlDbType.Bigint:
-                    ret = typeof(UInt32);
-                    break;*/
-               /* case NpgsqlDbType.Bigint:
-                    ret = typeof(UInt32);
-                    break;*/
-               /* case NpgsqlDbType.Numeric:
-                    ret = typeof(UInt64);
-                    break;*/
+                /* case NpgsqlDbType.Integer:
+                     ret = typeof(UInt16);
+                     break;*/
+                /*  case NpgsqlDbType.Bigint:
+                      ret = typeof(UInt32);
+                      break;*/
+                /* case NpgsqlDbType.Bigint:
+                     ret = typeof(UInt32);
+                     break;*/
+                /* case NpgsqlDbType.Numeric:
+                     ret = typeof(UInt64);
+                     break;*/
                 /*case NpgsqlDbType.Bytea:
                     ret = typeof(Byte[]);
                     break;*/
-               /* case NpgsqlDbType.Varchar:
-                    ret = typeof(String);
-                    break;*/
+                /* case NpgsqlDbType.Varchar:
+                     ret = typeof(String);
+                     break;*/
                 /*case NpgsqlDbType.Text:
                     ret = typeof(String);
                     break; */

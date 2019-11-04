@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Types;
+using Npgsql;
+using SQLSpatialTools;
+using System;
 using System.Data;
+using System.Data.SqlClient;
 using USC.GISResearchLab.Common.Core.Databases.BulkCopys;
 using USC.GISResearchLab.Common.Databases.QueryManagers;
-using SQLSpatialTools;
-using Npgsql;
-using Microsoft.SqlServer.Types;
 using USC.GISResearchLab.Common.Utils.Databases;
-using System.Data.SqlClient;
 
 namespace USC.GISResearchLab.Common.Core.Databases.Npgsql
 {
@@ -209,7 +209,7 @@ namespace USC.GISResearchLab.Common.Core.Databases.Npgsql
 
                 SqlRowsCopiedEventArgs sqlRowsCopiedEventArgs = new SqlRowsCopiedEventArgs(++NumberRowsCopied);
                 OnSqlRowsCopied(this, sqlRowsCopiedEventArgs);
-        
+
             }
 
             QueryManager.Connection.Close();
